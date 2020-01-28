@@ -43,6 +43,7 @@ export class SettingsComponent implements OnInit {
     this.account.firstName = this.settingsForm.get('firstName')!.value;
     this.account.lastName = this.settingsForm.get('lastName')!.value;
     this.account.email = this.settingsForm.get('email')!.value;
+    this.account.genre = this.settingsForm.get('genre')!.value;
 
     this.accountService.save(this.account).subscribe(() => {
       this.success = true;
