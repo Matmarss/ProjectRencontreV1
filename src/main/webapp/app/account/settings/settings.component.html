@@ -1,10 +1,10 @@
 <div>
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <h2  *ngIf="account">User settings for [<b>{{ account.login }}</b>]</h2>
+            <h2 *ngIf="account">Paramètres du profil de <b>{{ account.login }}</b></h2>
 
             <div class="alert alert-success" *ngIf="success">
-                <strong>Settings saved!</strong>
+                <strong>Paramètre sauvegarder !</strong>
             </div>
 
             <jhi-alert-error></jhi-alert-error>
@@ -13,62 +13,73 @@
 
                 <div class="form-group">
                     <label class="form-control-label" for="firstName">First Name</label>
-                    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Your first name"
-                           formControlName="firstName">
+                    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Your first name" formControlName="firstName">
                     <div *ngIf="settingsForm.get('firstName')!.invalid && (settingsForm.get('firstName')!.dirty || settingsForm.get('firstName')!.touched)">
-                        <small class="form-text text-danger"
-                           *ngIf="settingsForm.get('firstName')?.errors?.required">
+                        <small class="form-text text-danger" *ngIf="settingsForm.get('firstName')?.errors?.required">
                             Your first name is required.
                         </small>
-                        <small class="form-text text-danger"
-                           *ngIf="settingsForm.get('firstName')?.errors?.minlength">
+                        <small class="form-text text-danger" *ngIf="settingsForm.get('firstName')?.errors?.minlength">
                             Your first name is required to be at least 1 character.
                         </small>
-                        <small class="form-text text-danger"
-                           *ngIf="settingsForm.get('firstName')?.errors?.maxlength">
+                        <small class="form-text text-danger" *ngIf="settingsForm.get('firstName')?.errors?.maxlength">
                             Your first name cannot be longer than 50 characters.
                         </small>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" for="lastName">Last Name</label>
-                    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Your last name"
-                           formControlName="lastName">
+                    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Your last name" formControlName="lastName">
                     <div *ngIf="settingsForm.get('lastName')!.invalid && (settingsForm.get('lastName')!.dirty || settingsForm.get('lastName')!.touched)">
-                        <small class="form-text text-danger"
-                           *ngIf="settingsForm.get('lastName')?.errors?.required">
+                        <small class="form-text text-danger" *ngIf="settingsForm.get('lastName')?.errors?.required">
                             Your last name is required.
                         </small>
-                        <small class="form-text text-danger"
-                           *ngIf="settingsForm.get('lastName')?.errors?.minlength">
+                        <small class="form-text text-danger" *ngIf="settingsForm.get('lastName')?.errors?.minlength">
                             Your last name is required to be at least 1 character.
                         </small>
-                        <small class="form-text text-danger"
-                           *ngIf="settingsForm.get('lastName')?.errors?.maxlength">
+                        <small class="form-text text-danger" *ngIf="settingsForm.get('lastName')?.errors?.maxlength">
                             Your last name cannot be longer than 50 characters.
                         </small>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" for="email">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Your email"
-                           formControlName="email">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Your email" formControlName="email">
                     <div *ngIf="settingsForm.get('email')!.invalid && (settingsForm.get('email')!.dirty || settingsForm.get('email')!.touched)">
-                        <small class="form-text text-danger"
-                           *ngIf="settingsForm.get('email')?.errors?.required">
+                        <small class="form-text text-danger" *ngIf="settingsForm.get('email')?.errors?.required">
                             Your email is required.
                         </small>
-                        <small class="form-text text-danger"
-                           *ngIf="settingsForm.get('email')?.errors?.email">
+                        <small class="form-text text-danger" *ngIf="settingsForm.get('email')?.errors?.email">
                             Your email is invalid.
                         </small>
-                        <small class="form-text text-danger"
-                           *ngIf="settingsForm.get('email')?.errors?.minlength">
+                        <small class="form-text text-danger" *ngIf="settingsForm.get('email')?.errors?.minlength">
                             Your email is required to be at least 5 characters.
                         </small>
-                        <small class="form-text text-danger"
-                           *ngIf="settingsForm.get('email')?.errors?.maxlength">
+                        <small class="form-text text-danger" *ngIf="settingsForm.get('email')?.errors?.maxlength">
                             Your email cannot be longer than 100 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="genre">Genre</label>
+                    <select class="form-control" name="genre" formControlName="genre" id="genre">
+                        <option value="MASCULIN">Masculin</option>
+                        <option value="FEMININ">Feminin</option>
+                    </select>
+                    <div *ngIf="settingsForm.get('genre')!.invalid && (settingsForm.get('genre')!.dirty || settingsForm.get('genre')!.touched)">
+                        <small class="form-text text-danger" *ngIf="settingsForm.get('genre')?.errors?.required">
+                            Your genre is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="naissance">Date de Naissacnce</label>
+                    <input type="text" class="form-control" id="naissance" name="naissance" placeholder="Votre date de naissance" formControlName="naissance">
+                    <div *ngIf="settingsForm.get('naissance')!.invalid && (settingsForm.get('naissance')!.dirty || settingsForm.get('naissance')!.touched)">
+                        <small class="form-text text-danger" *ngIf="settingsForm.get('naissance')?.errors?.required">
+                            Your date de naissance is required.
+                        </small>
+                        <small class="form-text text-danger" *ngIf="settingsForm.get('naissance')?.errors?.email">
+                            Your date de naissance is invalid.
                         </small>
                     </div>
                 </div>
@@ -76,5 +87,4 @@
             </form>
         </div>
     </div>
-
 </div>
