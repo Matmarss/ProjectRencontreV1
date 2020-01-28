@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.inti.project"
+    },
+    "jhipsterVersion": "6.6.0",
+    "applicationType": "monolith",
+    "baseName": "RencontreV1",
+    "packageName": "com.inti.project",
+    "packageFolder": "com/inti/project",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "ZGQzOTljZjExYmUxNDBjNmM5Y2M1NmIwN2E5NTExOGEzNzY0ODNhOWYyN2VkYzI3NWYyMWViNzNmMWUzNzkzMjFkYTA2ZTk1YzczYTU4NTBiYWUyMTJhMzY1ZmJlNjc4Y2RlYTM1MjUyZjU4NzFhYTJkMGI2Y2ZiMGQ0OTE0MzM=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "angularX",
+    "clientTheme": "spacelab",
+    "clientThemeVariant": "primary",
+    "creationTimestamp": 1580208794411,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "blueprints": []
+  }
+}
