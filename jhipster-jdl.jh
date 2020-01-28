@@ -1,0 +1,17 @@
+entity Personne {
+	nom String required,
+    prenom String required,
+    mail String required,
+    genre String required,
+    motDePasse String required,
+    naissance String required,
+    listCarac Caracteristiques
+}
+
+enum Caracteristiques {
+	JOYEUX, AMICAL, RIEUR, CHANCEUX
+}
+
+
+
+

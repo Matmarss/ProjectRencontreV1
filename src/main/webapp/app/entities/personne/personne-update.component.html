@@ -1,0 +1,99 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-personne-heading">Create or edit a Personne</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_nom">Nom</label>
+                    <input type="text" class="form-control" name="nom" id="field_nom"
+                           formControlName="nom"/>
+                    <div *ngIf="editForm.get('nom')!.invalid && (editForm.get('nom')!.dirty || editForm.get('nom')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('nom')?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_prenom">Prenom</label>
+                    <input type="text" class="form-control" name="prenom" id="field_prenom"
+                           formControlName="prenom"/>
+                    <div *ngIf="editForm.get('prenom')!.invalid && (editForm.get('prenom')!.dirty || editForm.get('prenom')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('prenom')?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_mail">Mail</label>
+                    <input type="text" class="form-control" name="mail" id="field_mail"
+                           formControlName="mail"/>
+                    <div *ngIf="editForm.get('mail')!.invalid && (editForm.get('mail')!.dirty || editForm.get('mail')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('mail')?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_genre">Genre</label>
+                    <input type="text" class="form-control" name="genre" id="field_genre"
+                           formControlName="genre"/>
+                    <div *ngIf="editForm.get('genre')!.invalid && (editForm.get('genre')!.dirty || editForm.get('genre')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('genre')?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_motDePasse">Mot De Passe</label>
+                    <input type="text" class="form-control" name="motDePasse" id="field_motDePasse"
+                           formControlName="motDePasse"/>
+                    <div *ngIf="editForm.get('motDePasse')!.invalid && (editForm.get('motDePasse')!.dirty || editForm.get('motDePasse')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('motDePasse')?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_naissance">Naissance</label>
+                    <input type="text" class="form-control" name="naissance" id="field_naissance"
+                           formControlName="naissance"/>
+                    <div *ngIf="editForm.get('naissance')!.invalid && (editForm.get('naissance')!.dirty || editForm.get('naissance')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('naissance')?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_listCarac">List Carac</label>
+                    <select class="form-control" name="listCarac" formControlName="listCarac" id="field_listCarac">
+                        <option value="JOYEUX">JOYEUX</option>
+                        <option value="AMICAL">AMICAL</option>
+                        <option value="RIEUR">RIEUR</option>
+                        <option value="CHANCEUX">CHANCEUX</option>
+                    </select>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
