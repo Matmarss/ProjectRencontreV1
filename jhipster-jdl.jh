@@ -2,7 +2,7 @@ entity Personne {
 	nom String required,
     prenom String required,
     mail String required,
-    genre String required,
+    genre Genre required,
     motDePasse String required,
     naissance String required,
     listCarac Caracteristiques
@@ -10,6 +10,9 @@ entity Personne {
 
 enum Caracteristiques {
 	JOYEUX, AMICAL, RIEUR, CHANCEUX
+}
+enum Genre {
+	MASCULIN, FEMININ
 }
 
 
