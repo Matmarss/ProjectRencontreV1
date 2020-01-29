@@ -1,3 +1,4 @@
+import { Caracteristiques } from 'app/shared/model/enumerations/caracteristiques.model';
 export class Account {
   constructor(
     public activated: boolean,
@@ -9,6 +10,7 @@ export class Account {
     public login: string,
     public imageUrl: string,
     public genre: string,
-    public naissance: Date
+    public naissance: Date,
+    public caracteristiques: string[]
   ) {}
 }

@@ -13,6 +13,7 @@ import { NavbarComponent } from './layouts/navbar/navbar.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { PageRibbonComponent } from './layouts/profiles/page-ribbon.component';
 import { ErrorComponent } from './layouts/error/error.component';
+import { CaracteristiqueComponent } from './account/caracteristique/caracteristique.component';
 
 @NgModule({
   imports: [
@@ -24,7 +25,7 @@ import { ErrorComponent } from './layouts/error/error.component';
     RencontreV1EntityModule,
     RencontreV1AppRoutingModule
   ],
-  declarations: [MainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent],
+  declarations: [MainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent, CaracteristiqueComponent],
   bootstrap: [MainComponent]
 })
 export class RencontreV1AppModule {}
