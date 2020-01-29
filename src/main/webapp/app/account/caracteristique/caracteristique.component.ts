@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Account } from 'app/core/user/account.model';
 import { AccountService } from 'app/core/auth/account.service';
 import { FormBuilder } from '@angular/forms';
+import { Caracteristique } from './caracteristique';
 
 @Component({
   selector: 'jhi-caracteristique',
@@ -10,6 +11,8 @@ import { FormBuilder } from '@angular/forms';
 export class CaracteristiqueComponent implements OnInit {
   account!: Account;
   success = false;
+  listC = Object.keys(Caracteristique);
+
   caractForm = this.fb.group({
     caract1: [undefined],
     caract2: [undefined],
