@@ -11,9 +11,7 @@ import { RencontreV1EntityModule } from './entities/entity.module';
 import { MainComponent } from './layouts/main/main.component';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
 import { FooterComponent } from './layouts/footer/footer.component';
-import { PageRibbonComponent } from './layouts/profiles/page-ribbon.component';
 import { ErrorComponent } from './layouts/error/error.component';
-import { CaracteristiqueComponent } from './account/caracteristique/caracteristique.component';
 
 @NgModule({
   imports: [
@@ -25,7 +23,7 @@ import { CaracteristiqueComponent } from './account/caracteristique/caracteristi
     RencontreV1EntityModule,
     RencontreV1AppRoutingModule
   ],
-  declarations: [MainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent, CaracteristiqueComponent],
+  declarations: [MainComponent, NavbarComponent, ErrorComponent, FooterComponent],
   bootstrap: [MainComponent]
 })
 export class RencontreV1AppModule {}
