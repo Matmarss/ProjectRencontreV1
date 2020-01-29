@@ -10,52 +10,73 @@
             <form name="form" role="form" (ngSubmit)="save()" [formGroup]="caractForm" *ngIf="account" novalidate>
                 <div class="form-group">
                     <label class="form-control-label">
-                        <input type="text" name="caract1" class="form-control" placeholder="Caratère 1" formControlName="caract1">
+                        <select class="form-control" name="caract1">
+                            <option *ngFor="let item of listC" [ngValue]="item">{{item}}</option>
+                        </select>
                     </label>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label">
-                        <input type="text" name="caract2" class="form-control" placeholder="Caratère 2" formControlName="caract2">
+                        <select class="form-control" name="caract2">
+                            <option *ngFor="let item of listC" [ngValue]="item">{{item}}</option>
+                        </select>
                     </label>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label">
-                        <input type="text" name="caract3" class="form-control" placeholder="Caratère 3" formControlName="caract3">
+                        <select class="form-control" name="caract3">
+                            <option *ngFor="let item of listC" [ngValue]="item">{{item}}</option>
+                        </select>
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label">
+                        <select class="form-control" name="caract4">
+                            <option *ngFor="let item of listC" [ngValue]="item">{{item}}</option>
+                        </select>
                     </label>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label">
-                        <input type="text" name="caract4" class="form-control" placeholder="Caratère 4" formControlName="caract4">
+                        <select class="form-control" name="caract5">
+                            <option *ngFor="let item of listC" [ngValue]="item">{{item}}</option>
+                        </select>
                     </label>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label">
-                        <input type="text" name="caract5" class="form-control" placeholder="Caratère 5" formControlName="caract5">
+                        <select class="form-control" name="caract6">
+                            <option *ngFor="let item of listC" [ngValue]="item">{{item}}</option>
+                        </select>
                     </label>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label">
-                        <input type="text" name="caract6" class="form-control" placeholder="Caratère 6" formControlName="caract6">
+                        <select class="form-control" name="caract7">
+                            <option *ngFor="let item of listC" [ngValue]="item">{{item}}</option>
+                        </select>
                     </label>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label">
-                        <input type="text" name="caract7" class="form-control" placeholder="Caratère 7" formControlName="caract7">
+                        <select class="form-control" name="caract8">
+                            <option *ngFor="let item of listC" [ngValue]="item">{{item}}</option>
+                        </select>
                     </label>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label">
-                        <input type="text" name="caract8" class="form-control" placeholder="Caratère 8" formControlName="caract8">
+                        <select class="form-control" name="caract9">
+                            <option *ngFor="let item of listC" [ngValue]="item">{{item}}</option>
+                        </select>
                     </label>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label">
-                        <input type="text" name="caract9" class="form-control" placeholder="Caratère 9" formControlName="caract9">
-                    </label>
-                </div>
-                <div class="form-group">
-                    <label class="form-control-label">
-                        <input type="text" name="caract10" class="form-control" placeholder="Caratère 10" formControlName="caract10">
+                        <select class="form-control" name="caract10">
+                            <option *ngFor="let item of listC" [ngValue]="item">{{item}}</option>
+                        </select>
                     </label>
                 </div>
                 <button type="submit" [disabled]="caractForm.invalid" class="btn btn-primary">Save</button>
