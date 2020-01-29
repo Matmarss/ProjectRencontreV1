@@ -1,38 +1,35 @@
 <div class="row">
 
-    
     <div class="col-md-3">
-=======
-       <!------------NE PAS SUPPRIMER, CONTIENT L'IMAGE DU BONHOME AVEC LE COEUR------------------->
-    <div class="col-md-4">
+        <!------------NE PAS SUPPRIMER, CONTIENT L'IMAGE DU BONHOME AVEC LE COEUR------------------->
+        <div class="col-md-6">
 
-        <span class="hipster img-fluid rounded"></span>
-    </div>
-    <div>
-            <br/>
-            <br/>
-            <br/>
-        <div class="container">
-            <div class="card">
-                <h1 class="card-header; display-4">Bienvenue sur R 1 R!</h1>
-            </div>
+            <span class="hipster img-fluid rounded"></span>
+        </div>
+        <div>
 
-            <div class="card-body">
-                <div [ngSwitch]="isAuthenticated()">
-                    <div class="alert alert-success" *ngSwitchCase="true" >
-                        <span id="home-logged-message" *ngIf="account"> You are logged in as user "{{account.login}}".
-                        </span>
-                    </div>
+            <div class="container">
+                <div class="card">
+                    <h1 class="card-header; display-4">Bienvenue sur R 1 R!</h1>
+                </div>
 
-                    <div class="alert alert-warning" *ngSwitchCase="false" >
-                        <a class="alert-link" (click)="login()">Connexion</a>
-                    </div>
-                    <div class="alert alert-warning" *ngSwitchCase="false">
-                        <a class="alert-link" routerLink="account/register">Inscription</a>
+                <div class="card-body">
+                    <div [ngSwitch]="isAuthenticated()">
+                        <div class="alert alert-success" *ngSwitchCase="true">
+                            <span id="home-logged-message" *ngIf="account"> You are logged in as user
+                                "{{account.login}}".
+                            </span>
+                        </div>
+
+                        <div class="alert alert-warning" *ngSwitchCase="false">
+                            <a class="alert-link" (click)="login()">Connexion</a>
+                        </div>
+                        <div class="alert alert-warning" *ngSwitchCase="false">
+                            <a class="alert-link" routerLink="account/register">Inscription</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
+        </div>
     </div>
-</div>
