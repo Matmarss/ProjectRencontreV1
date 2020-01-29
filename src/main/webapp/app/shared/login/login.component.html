@@ -1,5 +1,6 @@
+
 <div class="modal-header">
-    <h4 class="modal-title">Sign in</h4>
+    <h1 class="modal-title">Sign in</h1>
     <button aria-label="Close" data-dismiss="modal" class="close" type="button" (click)="activeModal.dismiss('closed')"><span aria-hidden="true">x</span>
     </button>
 </div>
@@ -9,8 +10,9 @@
             <div class="alert alert-danger" *ngIf="authenticationError">
                 <strong>Failed to sign in!</strong> Please check your credentials and try again.
             </div>
-        </div>
-        <div class="col-md-8">
+        </div> 
+       
+         <div class="col-md-8">
             <form class="form" role="form" (ngSubmit)="login()" [formGroup]="loginForm">
                 <div class="form-group">
                     <label class="username-label" for="username">Login</label>
@@ -22,13 +24,16 @@
                     <input type="password" class="form-control" name="password" id="password" placeholder="Your password"
                            formControlName="password">
                 </div>
+              
                 <div class="form-check">
+                     
                     <label class="form-check-label" for="rememberMe">
+                            <span>Remember me tarazan</span>
                         <input class="form-check-input" type="checkbox" name="rememberMe" id="rememberMe" formControlName="rememberMe">
-                        <span>Remember me</span>
-                    </label>
+                    </label>   
                 </div>
-                <button type="submit" class="btn btn-primary">Sign in</button>
+               
+                <button type="submit">Sign in</button>
             </form>
             <p></p>
             <div class="alert alert-warning">
@@ -40,4 +45,5 @@
             </div>
         </div>
     </div>
-</div>
+    
+</div> 
