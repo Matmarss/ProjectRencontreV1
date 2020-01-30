@@ -6,6 +6,7 @@ import { LocalStorageService, SessionStorageService } from 'ngx-webstorage';
 
 import { SERVER_API_URL } from 'app/app.constants';
 import { Login } from 'app/core/login/login.model';
+import { Inscription } from '../inscription/inscription.model';
 
 type JwtToken = {
   id_token: string;
@@ -13,6 +14,10 @@ type JwtToken = {
 
 @Injectable({ providedIn: 'root' })
 export class AuthServerProvider {
+  // inscription(credentials: import("../inscription/inscription.model").Inscription) {
+  //   throw new Error("Method not implemented.");
+  // }
+
   constructor(private http: HttpClient, private $localStorage: LocalStorageService, private $sessionStorage: SessionStorageService) {}
 
   getToken(): string {
@@ -22,6 +27,12 @@ export class AuthServerProvider {
   login(credentials: Login): Observable<void> {
     return this.http
       .post<JwtToken>(SERVER_API_URL + 'api/authenticate', credentials)
+      .pipe(map(response => this.authenticateSuccess(response, credentials.rememberMe)));
+  }
+
+  inscription(credentials: Inscription): Observable<void> {
+    return this.http
+      .post<JwtToken>(SERVER_API_URL + 'api/register', credentials)
       .pipe(map(response => this.authenticateSuccess(response, credentials.rememberMe)));
   }
 
