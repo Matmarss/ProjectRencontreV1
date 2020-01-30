@@ -1,7 +1,7 @@
-<div class="modal-body">
-    <button aria-label="Close" data-dismiss="modal" class="close" type="button"
+<div class="container-form">
+    <!-- <button aria-label="Close" data-dismiss="modal" class="close" type="button"
         (click)="activeModal.dismiss('closed')"><span aria-hidden="true">x</span>
-    </button>
+    </button> -->
     <div class="alert alert-success" *ngIf="success">
         <strong>Registration saved!</strong> Please check your email for confirmation.
     </div>
@@ -22,37 +22,47 @@
         The password and its confirmation do not match!
     </div>
 
-    <div class="modal-header">
-        <h1 class="modal-title">Register</h1>
 
+
+
+    <div class="modal-header">
+        <h1 class="modal-title">Register </h1>
+        <!-- <button aria-label="Close" data-dismiss="modal" class="close" type="button"
+            (click)="activeModal.dismiss('closed')"><span aria-hidden="true">x</span>
+        </button> -->
     </div>
     <div class="modal-body">
         <div class="row justify-content-center">
-
-
             <div class="col-md-12">
+                <div class="alert alert-danger" *ngIf="authenticationError">
+                    <strong>Failed to register!</strong> Please check your credentials and try again.
+                </div>
+            </div>
+            <div class="col-md-12">
+
                 <form name="form" role="form" (ngSubmit)="register()" [formGroup]="registerForm" *ngIf="!success">
-                        <div class="form-group">
-    
-                                <label class="form-control-label" for="login">Username</label>
-                                <input type="text" class="form-control" id="login" name="login" placeholder="Your username"
-                                    formControlName="login" #login>
-                                <div
-                                    *ngIf="registerForm.get('login')!.invalid && (registerForm.get('login')!.dirty || registerForm.get('login')!.touched)">
-                                    <small class="form-text text-danger" *ngIf="registerForm.get('login')?.errors?.required">
-                                        Your username is required.
-                                    </small>
-                                    <small class="form-text text-danger" *ngIf="registerForm.get('login')?.errors?.minlength">
-                                        Your username is required to be at least 1 character.
-                                    </small>
-                                    <small class="form-text text-danger" *ngIf="registerForm.get('login')?.errors?.maxlength">
-                                        Your username cannot be longer than 50 characters.
-                                    </small>
-                                    <small class="form-text text-danger" *ngIf="registerForm.get('login')?.errors?.pattern">
-                                        Your username can only contain letters and digits.
-                                    </small>
-                                </div>
-                            </div>
+                    <div class="form-group">
+
+
+                        <label class="form-control-label" for="login">Username</label>
+                        <input type="text" class="form-control" id="login" name="login" placeholder="Your username"
+                            formControlName="login" #login>
+                        <div
+                            *ngIf="registerForm.get('login')!.invalid && (registerForm.get('login')!.dirty || registerForm.get('login')!.touched)">
+                            <small class="form-text text-danger" *ngIf="registerForm.get('login')?.errors?.required">
+                                Your username is required.
+                            </small>
+                            <small class="form-text text-danger" *ngIf="registerForm.get('login')?.errors?.minlength">
+                                Your username is required to be at least 1 character.
+                            </small>
+                            <small class="form-text text-danger" *ngIf="registerForm.get('login')?.errors?.maxlength">
+                                Your username cannot be longer than 50 characters.
+                            </small>
+                            <small class="form-text text-danger" *ngIf="registerForm.get('login')?.errors?.pattern">
+                                Your username can only contain letters and digits.
+                            </small>
+                        </div>
+                    </div>
                     <div class="form-group">
 
                         <label class="username-label" for="login">FirstName</label>
@@ -120,7 +130,7 @@
                     <div class="form-group">
 
                         <label class="username-label" for="login">Genre</label>
-                        <input type="text" class="form-control" id="login" name="login" placeholder="Your firstname"
+                        <input type="text" class="form-control" id="login" name="login" placeholder="Male or female"
                             formControlName="login" #login>
 
                         <div
@@ -183,7 +193,7 @@
 
                     </div>
                     <button type="submit" [disabled]="registerForm.invalid">Register</button>
-                    <button type="submit" (click)="openLogin()"> Connexion</button> 
+                    <button type="submit" (click)="openLogin()"> Connexion</button>
                 </form>
             </div>
         </div>
