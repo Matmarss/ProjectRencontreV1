@@ -24,7 +24,8 @@
         },
         {
             "fieldName": "genre",
-            "fieldType": "String",
+            "fieldType": "Genre",
+            "fieldValues": "MASCULIN,FEMININ",
             "fieldValidateRules": [
                 "required"
             ]
@@ -45,11 +46,17 @@
         },
         {
             "fieldName": "listCarac",
-            "fieldType": "Caracteristiques",
-            "fieldValues": "JOYEUX,AMICAL,RIEUR,CHANCEUX"
+            "fieldType": "String"
         }
     ],
-    "relationships": [],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "caracteristique",
+            "otherEntityRelationshipName": "personne",
+            "relationshipName": "listCarac"
+        }
+    ],
     "changelogDate": "20200128112947",
     "entityTableName": "personne",
     "dto": "no",

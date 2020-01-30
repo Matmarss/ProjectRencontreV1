@@ -1,0 +1,29 @@
+{
+    "name": "Caracteristique",
+    "fields": [
+        {
+            "fieldName": "carac",
+            "fieldType": "Caracteristiques",
+            "fieldValues": "JOYEUX,AMICAL,RIEUR,CHANCEUX,TIMIDE,LIBRE,JOUEUR,SPORTIF,GRAND,PETIT"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "personne",
+            "otherEntityRelationshipName": "listCarac",
+            "relationshipName": "personne",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200130141937",
+    "entityTableName": "caracteristique",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}
