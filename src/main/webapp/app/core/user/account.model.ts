@@ -1,4 +1,14 @@
 export class Account {
+  caract2: any;
+  caract3: any;
+  caract4: any;
+  caract6: any;
+  caract5: any;
+  caract1: any;
+  caract7: any;
+  caract8: any;
+  caract10: any;
+  caract9: any;
   constructor(
     public activated: boolean,
     public authorities: string[],
@@ -7,18 +17,6 @@ export class Account {
     public langKey: string,
     public lastName: string,
     public login: string,
-    public imageUrl: string,
-    public genre: string,
-    public naissance: Date,
-    public caract1: string,
-    public caract2: string,
-    public caract3: string,
-    public caract4: string,
-    public caract5: string,
-    public caract6: string,
-    public caract7: string,
-    public caract8: string,
-    public caract9: string,
-    public caract10: string
+    public imageUrl: string
   ) {}
 }

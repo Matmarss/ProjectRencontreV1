@@ -1,4 +1,3 @@
-import { InscriptionModalService } from './../core/inscription/inscription-modal.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
@@ -16,11 +15,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   account: Account | null = null;
   authSubscription?: Subscription;
 
-  constructor(
-    private accountService: AccountService,
-    private loginModalService: LoginModalService,
-    private inscriptionModalService: InscriptionModalService
-  ) {}
+  constructor(private accountService: AccountService, private loginModalService: LoginModalService) {}
 
   ngOnInit(): void {
     this.authSubscription = this.accountService.getAuthenticationState().subscribe(account => (this.account = account));
@@ -32,11 +27,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   login(): void {
     this.loginModalService.open();
-    //connexion de la page de garde
-  }
-
-  inscription(): void {
-    this.inscriptionModalService.openopen();
   }
 
   ngOnDestroy(): void {

@@ -13,7 +13,6 @@ export class LoginService {
 
   login(credentials: Login): Observable<Account | null> {
     return this.authServerProvider.login(credentials).pipe(flatMap(() => this.accountService.identity(true)));
-    //pour faire le sign in, après avoir mis: admin admin
   }
 
   logout(): void {

@@ -11,7 +11,6 @@ import { RouterModule } from '@angular/router';
       {
         path: 'caracteristique',
         loadChildren: () => import('./caracteristique/caracteristique.module').then(m => m.RencontreV1CaracteristiqueModule)
-      }
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ])
   ]
