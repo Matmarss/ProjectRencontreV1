@@ -44,8 +44,10 @@
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" for="field_genre">Genre</label>
-                    <input type="text" class="form-control" name="genre" id="field_genre"
-                           formControlName="genre"/>
+                    <select class="form-control" name="genre" formControlName="genre" id="field_genre">
+                        <option value="MASCULIN">MASCULIN</option>
+                        <option value="FEMININ">FEMININ</option>
+                    </select>
                     <div *ngIf="editForm.get('genre')!.invalid && (editForm.get('genre')!.dirty || editForm.get('genre')!.touched)">
                         <small class="form-text text-danger"
                                *ngIf="editForm.get('genre')?.errors?.required">
@@ -77,12 +79,8 @@
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" for="field_listCarac">List Carac</label>
-                    <select class="form-control" name="listCarac" formControlName="listCarac" id="field_listCarac">
-                        <option value="JOYEUX">JOYEUX</option>
-                        <option value="AMICAL">AMICAL</option>
-                        <option value="RIEUR">RIEUR</option>
-                        <option value="CHANCEUX">CHANCEUX</option>
-                    </select>
+                    <input type="text" class="form-control" name="listCarac" id="field_listCarac"
+                           formControlName="listCarac"/>
                 </div>
 
             </div>

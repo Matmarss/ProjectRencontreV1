@@ -27,7 +27,7 @@ import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-import com.inti.project.domain.enumeration.Caracteristiques;
+import com.inti.project.domain.enumeration.Genre;
 /**
  * Integration tests for the {@link PersonneResource} REST controller.
  */
@@ -43,8 +43,8 @@ public class PersonneResourceIT {
     private static final String DEFAULT_MAIL = "AAAAAAAAAA";
     private static final String UPDATED_MAIL = "BBBBBBBBBB";
 
-    private static final String DEFAULT_GENRE = "AAAAAAAAAA";
-    private static final String UPDATED_GENRE = "BBBBBBBBBB";
+    private static final Genre DEFAULT_GENRE = Genre.MASCULIN;
+    private static final Genre UPDATED_GENRE = Genre.FEMININ;
 
     private static final String DEFAULT_MOT_DE_PASSE = "AAAAAAAAAA";
     private static final String UPDATED_MOT_DE_PASSE = "BBBBBBBBBB";
@@ -52,8 +52,8 @@ public class PersonneResourceIT {
     private static final String DEFAULT_NAISSANCE = "AAAAAAAAAA";
     private static final String UPDATED_NAISSANCE = "BBBBBBBBBB";
 
-    private static final Caracteristiques DEFAULT_LIST_CARAC = Caracteristiques.JOYEUX;
-    private static final Caracteristiques UPDATED_LIST_CARAC = Caracteristiques.AMICAL;
+    private static final String DEFAULT_LIST_CARAC = "AAAAAAAAAA";
+    private static final String UPDATED_LIST_CARAC = "BBBBBBBBBB";
 
     @Autowired
     private PersonneRepository personneRepository;
@@ -295,10 +295,10 @@ public class PersonneResourceIT {
             .andExpect(jsonPath("$.[*].nom").value(hasItem(DEFAULT_NOM)))
             .andExpect(jsonPath("$.[*].prenom").value(hasItem(DEFAULT_PRENOM)))
             .andExpect(jsonPath("$.[*].mail").value(hasItem(DEFAULT_MAIL)))
-            .andExpect(jsonPath("$.[*].genre").value(hasItem(DEFAULT_GENRE)))
+            .andExpect(jsonPath("$.[*].genre").value(hasItem(DEFAULT_GENRE.toString())))
             .andExpect(jsonPath("$.[*].motDePasse").value(hasItem(DEFAULT_MOT_DE_PASSE)))
             .andExpect(jsonPath("$.[*].naissance").value(hasItem(DEFAULT_NAISSANCE)))
-            .andExpect(jsonPath("$.[*].listCarac").value(hasItem(DEFAULT_LIST_CARAC.toString())));
+            .andExpect(jsonPath("$.[*].listCarac").value(hasItem(DEFAULT_LIST_CARAC)));
     }
     
     @Test
@@ -315,10 +315,10 @@ public class PersonneResourceIT {
             .andExpect(jsonPath("$.nom").value(DEFAULT_NOM))
             .andExpect(jsonPath("$.prenom").value(DEFAULT_PRENOM))
             .andExpect(jsonPath("$.mail").value(DEFAULT_MAIL))
-            .andExpect(jsonPath("$.genre").value(DEFAULT_GENRE))
+            .andExpect(jsonPath("$.genre").value(DEFAULT_GENRE.toString()))
             .andExpect(jsonPath("$.motDePasse").value(DEFAULT_MOT_DE_PASSE))
             .andExpect(jsonPath("$.naissance").value(DEFAULT_NAISSANCE))
-            .andExpect(jsonPath("$.listCarac").value(DEFAULT_LIST_CARAC.toString()));
+            .andExpect(jsonPath("$.listCarac").value(DEFAULT_LIST_CARAC));
     }
 
     @Test

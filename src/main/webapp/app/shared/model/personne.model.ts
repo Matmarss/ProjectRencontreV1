@@ -1,14 +1,16 @@
-import { Caracteristiques } from 'app/shared/model/enumerations/caracteristiques.model';
+import { ICaracteristique } from 'app/shared/model/caracteristique.model';
+import { Genre } from 'app/shared/model/enumerations/genre.model';
 
 export interface IPersonne {
   id?: number;
   nom?: string;
   prenom?: string;
   mail?: string;
-  genre?: string;
+  genre?: Genre;
   motDePasse?: string;
   naissance?: string;
-  listCarac?: Caracteristiques;
+  listCarac?: string;
+  listCaracs?: ICaracteristique[];
 }
 
 export class Personne implements IPersonne {
@@ -17,9 +19,10 @@ export class Personne implements IPersonne {
     public nom?: string,
     public prenom?: string,
     public mail?: string,
-    public genre?: string,
+    public genre?: Genre,
     public motDePasse?: string,
     public naissance?: string,
-    public listCarac?: Caracteristiques
+    public listCarac?: string,
+    public listCaracs?: ICaracteristique[]
   ) {}
 }

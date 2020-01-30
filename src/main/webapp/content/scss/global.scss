@@ -461,3 +461,14 @@ footer a {
 .modal-title {
   text-align: center;
 }
+
+// NAVBAR //
+
+.navbar {
+  padding: 0.2rem 1rem;
+  .dropdown-item.active,
+  .dropdown-item.active:focus,
+  .dropdown-item.active:hover {
+    background-color: #ff416c;
+  }
+}
