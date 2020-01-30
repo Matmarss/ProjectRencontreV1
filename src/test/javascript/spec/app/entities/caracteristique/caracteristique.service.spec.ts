@@ -1,27 +1,27 @@
 import { TestBed, getTestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { take, map } from 'rxjs/operators';
-import { PersonneService } from 'app/entities/personne/personne.service';
-import { IPersonne, Personne } from 'app/shared/model/personne.model';
-import { Genre } from 'app/shared/model/enumerations/genre.model';
+import { CaracteristiqueService } from 'app/entities/caracteristique/caracteristique.service';
+import { ICaracteristique, Caracteristique } from 'app/shared/model/caracteristique.model';
+import { Caracteristiques } from 'app/shared/model/enumerations/caracteristiques.model';
 
 describe('Service Tests', () => {
-  describe('Personne Service', () => {
+  describe('Caracteristique Service', () => {
     let injector: TestBed;
-    let service: PersonneService;
+    let service: CaracteristiqueService;
     let httpMock: HttpTestingController;
-    let elemDefault: IPersonne;
-    let expectedResult: IPersonne | IPersonne[] | boolean | null;
+    let elemDefault: ICaracteristique;
+    let expectedResult: ICaracteristique | ICaracteristique[] | boolean | null;
     beforeEach(() => {
       TestBed.configureTestingModule({
         imports: [HttpClientTestingModule]
       });
       expectedResult = null;
       injector = getTestBed();
-      service = injector.get(PersonneService);
+      service = injector.get(CaracteristiqueService);
       httpMock = injector.get(HttpTestingController);
 
-      elemDefault = new Personne(0, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA', Genre.MASCULIN, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA');
+      elemDefault = new Caracteristique(0, Caracteristiques.JOYEUX);
     });
 
     describe('Service methods', () => {
@@ -37,7 +37,7 @@ describe('Service Tests', () => {
         expect(expectedResult).toMatchObject(elemDefault);
       });
 
-      it('should create a Personne', () => {
+      it('should create a Caracteristique', () => {
         const returnedFromService = Object.assign(
           {
             id: 0
@@ -46,7 +46,7 @@ describe('Service Tests', () => {
         );
         const expected = Object.assign({}, returnedFromService);
         service
-          .create(new Personne())
+          .create(new Caracteristique())
           .pipe(take(1))
           .subscribe(resp => (expectedResult = resp.body));
         const req = httpMock.expectOne({ method: 'POST' });
@@ -54,16 +54,10 @@ describe('Service Tests', () => {
         expect(expectedResult).toMatchObject(expected);
       });
 
-      it('should update a Personne', () => {
+      it('should update a Caracteristique', () => {
         const returnedFromService = Object.assign(
           {
-            nom: 'BBBBBB',
-            prenom: 'BBBBBB',
-            mail: 'BBBBBB',
-            genre: 'BBBBBB',
-            motDePasse: 'BBBBBB',
-            naissance: 'BBBBBB',
-            listCarac: 'BBBBBB'
+            carac: 'BBBBBB'
           },
           elemDefault
         );
@@ -78,16 +72,10 @@ describe('Service Tests', () => {
         expect(expectedResult).toMatchObject(expected);
       });
 
-      it('should return a list of Personne', () => {
+      it('should return a list of Caracteristique', () => {
         const returnedFromService = Object.assign(
           {
-            nom: 'BBBBBB',
-            prenom: 'BBBBBB',
-            mail: 'BBBBBB',
-            genre: 'BBBBBB',
-            motDePasse: 'BBBBBB',
-            naissance: 'BBBBBB',
-            listCarac: 'BBBBBB'
+            carac: 'BBBBBB'
           },
           elemDefault
         );
@@ -105,7 +93,7 @@ describe('Service Tests', () => {
         expect(expectedResult).toContainEqual(expected);
       });
 
-      it('should delete a Personne', () => {
+      it('should delete a Caracteristique', () => {
         service.delete(123).subscribe(resp => (expectedResult = resp.ok));
 
         const req = httpMock.expectOne({ method: 'DELETE' });

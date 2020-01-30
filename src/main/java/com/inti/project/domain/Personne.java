@@ -4,8 +4,10 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
-import com.inti.project.domain.enumeration.Caracteristiques;
+import com.inti.project.domain.enumeration.Genre;
 
 /**
  * A Personne.
@@ -33,8 +35,9 @@ public class Personne implements Serializable {
     private String mail;
 
     @NotNull
+    @Enumerated(EnumType.STRING)
     @Column(name = "genre", nullable = false)
-    private String genre;
+    private Genre genre;
 
     @NotNull
     @Column(name = "mot_de_passe", nullable = false)
@@ -44,9 +47,11 @@ public class Personne implements Serializable {
     @Column(name = "naissance", nullable = false)
     private String naissance;
 
-    @Enumerated(EnumType.STRING)
     @Column(name = "list_carac")
-    private Caracteristiques listCarac;
+    private String listCarac;
+
+    @OneToMany(mappedBy = "personne")
+    private Set<Caracteristique> listCaracs = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -96,16 +101,16 @@ public class Personne implements Serializable {
         this.mail = mail;
     }
 
-    public String getGenre() {
+    public Genre getGenre() {
         return genre;
     }
 
-    public Personne genre(String genre) {
+    public Personne genre(Genre genre) {
         this.genre = genre;
         return this;
     }
 
-    public void setGenre(String genre) {
+    public void setGenre(Genre genre) {
         this.genre = genre;
     }
 
@@ -135,17 +140,42 @@ public class Personne implements Serializable {
         this.naissance = naissance;
     }
 
-    public Caracteristiques getListCarac() {
+    public String getListCarac() {
         return listCarac;
     }
 
-    public Personne listCarac(Caracteristiques listCarac) {
+    public Personne listCarac(String listCarac) {
         this.listCarac = listCarac;
         return this;
     }
 
-    public void setListCarac(Caracteristiques listCarac) {
+    public void setListCarac(String listCarac) {
         this.listCarac = listCarac;
+    }
+
+    public Set<Caracteristique> getListCaracs() {
+        return listCaracs;
+    }
+
+    public Personne listCaracs(Set<Caracteristique> caracteristiques) {
+        this.listCaracs = caracteristiques;
+        return this;
+    }
+
+    public Personne addListCarac(Caracteristique caracteristique) {
+        this.listCaracs.add(caracteristique);
+        caracteristique.setPersonne(this);
+        return this;
+    }
+
+    public Personne removeListCarac(Caracteristique caracteristique) {
+        this.listCaracs.remove(caracteristique);
+        caracteristique.setPersonne(null);
+        return this;
+    }
+
+    public void setListCaracs(Set<Caracteristique> caracteristiques) {
+        this.listCaracs = caracteristiques;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

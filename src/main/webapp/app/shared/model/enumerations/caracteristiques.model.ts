@@ -3,6 +3,10 @@ export const enum Caracteristiques {
   AMICAL,
   RIEUR,
   CHANCEUX,
-  CALIN,
-  DOUX
+  TIMIDE,
+  LIBRE,
+  JOUEUR,
+  SPORTIF,
+  GRAND,
+  PETIT
 }

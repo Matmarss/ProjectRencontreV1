@@ -1,20 +1,27 @@
 entity Personne {
+	id	Integer required,
 	nom String required,
     prenom String required,
     mail String required,
     genre Genre required,
     motDePasse String required,
     naissance String required,
-    listCarac Caracteristiques
+    listCarac String
 }
 
+entity Caracteristique {
+	carac Caracteristiques
+}
 enum Caracteristiques {
-	JOYEUX, AMICAL, RIEUR, CHANCEUX
+	JOYEUX, AMICAL, RIEUR, CHANCEUX, TIMIDE, LIBRE, JOUEUR, SPORTIF, GRAND, PETIT
 }
 enum Genre {
 	MASCULIN, FEMININ
 }
 
+relationship OneToMany {
+	Personne{listCarac} to Caracteristique
+}
 
 
 

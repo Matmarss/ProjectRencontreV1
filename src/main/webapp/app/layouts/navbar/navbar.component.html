@@ -1,14 +1,21 @@
-<nav class="navbar navbar-primary navbar-expand-md">
 
-    <h1 class="modal-title" style="color: #FF416C">Rencontre </h1>
+
+ <nav class="navbar navbar-primary navbar-expand-md" style="color: #ff416c"> 
+ 
+
+
+        <h1 class="modal-title" style="color: #ff416c">Rencontre </h1>
+
     <!-- <nav class="navbar navbar-primary navbar-expand-md bg-danger"> -->
     <!-- <a class="navbar-brand logo" routerLink="/" (click)="collapseNavbar()">
+
     <span class="logo-img"></span>
     <span class="navbar-title">RencontreV1</span> <span class="navbar-version">{{version}}</span>
 </a> -->
     <a class="navbar-toggler d-lg-none" href="javascript:void(0);" data-toggle="collapse"
         data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
         aria-label="Toggle navigation" (click)="toggleNavbar()">
+
         <fa-icon icon="bars"></fa-icon>
     </a>
     <div class="navbar-collapse collapse" id="navbarResponsive" [ngbCollapse]="isNavbarCollapsed"
@@ -34,6 +41,18 @@
                     </span>
                 </a>
                 <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="entity-menu">
+                    <li>
+                        <a class="dropdown-item" routerLink="personne" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
+                            <span>Personne</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="caracteristique" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
+                            <span>Caracteristique</span>
+                        </a>
+                    </li>
                     <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
                 </ul>
             </li>
