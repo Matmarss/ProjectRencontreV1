@@ -52,7 +52,6 @@ export class LoginModalComponent implements AfterViewInit {
         rememberMe: this.loginForm.get('rememberMe')!.value
       })
       .subscribe(
-        //permet d'attérir sur la page de la connexion
         () => {
           this.authenticationError = false;
           this.activeModal.close();

@@ -1,4 +1,3 @@
-import { InscriptionModalService } from './../../core/inscription/inscription-modal.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -7,7 +6,6 @@ import { AccountService } from 'app/core/auth/account.service';
 import { LoginModalService } from 'app/core/login/login-modal.service';
 import { LoginService } from 'app/core/login/login.service';
 import { ProfileService } from 'app/layouts/profiles/profile.service';
-import { InscriptionService } from 'app/core/inscription/inscription.service';
 
 @Component({
   selector: 'jhi-navbar',
@@ -22,10 +20,8 @@ export class NavbarComponent implements OnInit {
 
   constructor(
     private loginService: LoginService,
-    private inscriptionService: InscriptionService,
     private accountService: AccountService,
     private loginModalService: LoginModalService,
-    private inscriptionModalService: InscriptionModalService,
     private profileService: ProfileService,
     private router: Router
   ) {
@@ -49,10 +45,6 @@ export class NavbarComponent implements OnInit {
 
   login(): void {
     this.loginModalService.open();
-  }
-
-  inscription(): void {
-    this.inscriptionModalService.open();
   }
 
   logout(): void {
